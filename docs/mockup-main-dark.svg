@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif">
+  <rect width="1440" height="900" fill="#17171A"/>
+
+  <!-- ===== 标题栏 ===== -->
+  <rect x="0" y="0" width="1440" height="52" fill="#1B1B1F"/>
+  <line x1="0" y1="52" x2="1440" y2="52" stroke="#2A2A2F" stroke-width="1"/>
+  <circle cx="22" cy="26" r="6.5" fill="#FF5F57"/>
+  <circle cx="42" cy="26" r="6.5" fill="#FEBC2E"/>
+  <circle cx="62" cy="26" r="6.5" fill="#28C840"/>
+
+  <!-- 标签页 -->
+  <rect x="96" y="12" width="128" height="28" rx="7" fill="#26262B"/>
+  <text x="112" y="31" font-size="12.5" fill="#F5F5F7">ERP-api</text>
+  <circle cx="196" cy="26" r="3" fill="#FF9F0A"/>
+  <text x="206" y="31" font-size="11" fill="#6E6E73">✕</text>
+
+  <rect x="232" y="12" width="112" height="28" rx="7" fill="none"/>
+  <text x="244" y="31" font-size="12.5" fill="#A1A1A6">ERP-web</text>
+  <text x="326" y="31" font-size="11" fill="#6E6E73">✕</text>
+
+  <text x="364" y="31" font-size="15" fill="#6E6E73">＋</text>
+
+  <!-- 右侧工具 -->
+  <circle cx="1258" cy="26" r="6" fill="none" stroke="#8E8E93" stroke-width="1.5"/>
+  <line x1="1262.5" y1="30.5" x2="1267" y2="35" stroke="#8E8E93" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="1284" y="16" width="56" height="21" rx="5" fill="#26262B"/>
+  <text x="1296" y="30.5" font-size="11" fill="#A1A1A6">⌘K</text>
+  <text x="1372" y="31" font-size="14" fill="#8E8E93">☾</text>
+
+  <!-- ===== 侧栏 ===== -->
+  <rect x="0" y="52" width="260" height="800" fill="#131316"/>
+  <line x1="260" y1="52" x2="260" y2="852" stroke="#2A2A2F"/>
+
+  <rect x="12" y="66" width="236" height="28" rx="6" fill="#1C1C20"/>
+  <circle cx="27" cy="80" r="5" fill="none" stroke="#6E6E73" stroke-width="1.4"/>
+  <line x1="30.5" y1="83.5" x2="34" y2="87" stroke="#6E6E73" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="42" y="84" font-size="11.5" fill="#6E6E73">筛选分支、提交、文件</text>
+
+  <text x="16" y="122" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">工作区</text>
+
+  <rect x="8" y="132" width="244" height="24" rx="5" fill="#24242A"/>
+  <circle cx="22" cy="144" r="3" fill="#30D158"/>
+  <text x="32" y="148" font-size="12.5" fill="#F5F5F7">ERP-api</text>
+  <text x="214" y="148" font-size="10.5" fill="#FF9F0A">2↑</text>
+
+  <circle cx="22" cy="170" r="3" fill="#4A4A50"/>
+  <text x="32" y="174" font-size="12.5" fill="#A1A1A6">ERP-web</text>
+  <circle cx="22" cy="196" r="3" fill="#4A4A50"/>
+  <text x="32" y="200" font-size="12.5" fill="#A1A1A6">docker-config</text>
+
+  <text x="16" y="234" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">分支 12</text>
+
+  <rect x="8" y="244" width="244" height="24" rx="5" fill="#1D2433"/>
+  <rect x="8" y="247" width="2" height="18" rx="1" fill="#0A84FF"/>
+  <text x="22" y="260" font-size="12" fill="#F5F5F7">main</text>
+  <text x="196" y="260" font-size="10.5" fill="#FF9F0A">↑2 ↓0</text>
+
+  <text x="22" y="286" font-size="12" fill="#A1A1A6">feature/stock-alloc</text>
+  <text x="22" y="312" font-size="12" fill="#A1A1A6">hotfix/pay-null</text>
+  <text x="22" y="338" font-size="12" fill="#A1A1A6">release/2026.11</text>
+
+  <text x="16" y="376" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">远程 18</text>
+  <text x="16" y="412" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">贮藏 2</text>
+  <text x="16" y="448" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">工作树</text>
+  <text x="16" y="484" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">子模块</text>
+
+  <line x1="12" y1="806" x2="248" y2="806" stroke="#26262B"/>
+  <circle cx="26" cy="826" r="11" fill="#2F5FD0"/>
+  <text x="26" y="830" font-size="10" fill="#FFFFFF" text-anchor="middle">高</text>
+  <text x="46" y="823" font-size="11.5" fill="#C7C7CC">gaochenjie</text>
+  <text x="46" y="837" font-size="10" fill="#6E6E73">本地优先 · 无遥测</text>
+
+  <!-- ===== 主区头部 ===== -->
+  <rect x="260" y="52" width="860" height="52" fill="#17171A"/>
+  <line x1="260" y1="104" x2="1120" y2="104" stroke="#2A2A2F"/>
+
+  <g transform="translate(282,74)">
+    <circle cx="6" cy="7" r="3.2" fill="none" stroke="#0A84FF" stroke-width="1.4"/>
+    <circle cx="6" cy="-1" r="3.2" fill="none" stroke="#0A84FF" stroke-width="1.4"/>
+    <line x1="6" y1="3.4" x2="6" y2="3.6" stroke="#0A84FF" stroke-width="1.4"/>
+    <text x="18" y="12" font-size="14" font-weight="600" fill="#F5F5F7">main</text>
+    <text x="62" y="12" font-size="11" fill="#8E8E93">▾</text>
+  </g>
+  <text x="368" y="86" font-size="10.5" fill="#8E8E93">基于 origin/main</text>
+
+  <rect x="470" y="66" width="152" height="26" rx="7" fill="#222226"/>
+  <rect x="546" y="68" width="74" height="22" rx="5" fill="#33333A"/>
+  <text x="496" y="83" font-size="11.5" fill="#8E8E93">变更</text>
+  <text x="562" y="83" font-size="11.5" fill="#F5F5F7">历史</text>
+
+  <text x="700" y="84" font-size="10.5" fill="#5A5A60">已同步 · 刚刚</text>
+
+  <rect x="880" y="66" width="62" height="26" rx="6" fill="#222226"/>
+  <text x="897" y="83" font-size="11.5" fill="#C7C7CC">拉取</text>
+  <rect x="950" y="66" width="70" height="26" rx="6" fill="#0A84FF"/>
+  <text x="966" y="83" font-size="11.5" fill="#FFFFFF">推送</text>
+  <text x="1036" y="83" font-size="13" fill="#8E8E93">⟳</text>
+
+  <!-- ===== 提交图 ===== -->
+  <rect x="260" y="104" width="860" height="452" fill="#17171A"/>
+
+  <!-- lane 0 -->
+  <path d="M300 132 L300 192" stroke="#4C8DFF" stroke-width="1.5" fill="none"/>
+  <path d="M300 192 C300 207 316 207 316 222" stroke="#FF9F0A" stroke-width="1.5" fill="none"/>
+  <path d="M316 222 L316 252" stroke="#FF9F0A" stroke-width="1.5" fill="none"/>
+  <path d="M316 252 C316 267 300 267 300 282" stroke="#FF9F0A" stroke-width="1.5" fill="none"/>
+  <path d="M300 282 L300 552" stroke="#4C8DFF" stroke-width="1.5" fill="none"/>
+
+  <!-- row 1 -->
+  <circle cx="300" cy="132" r="5" fill="#4C8DFF"/>
+  <circle cx="300" cy="132" r="7.5" fill="none" stroke="#4C8DFF" stroke-width="1" opacity="0.35"/>
+  <rect x="320" y="124" width="44" height="16" rx="4" fill="#2F5FD0"/>
+  <text x="330" y="135.5" font-size="10" fill="#FFFFFF">main</text>
+  <text x="374" y="136" font-size="12.5" fill="#F5F5F7">feat: 库存分配支持渠道维度</text>
+  <text x="1010" y="136" font-size="10.5" fill="#8E8E93">张三</text>
+  <text x="1058" y="136" font-size="10.5" fill="#6E6E73">2 小时前</text>
+  <circle cx="1102" cy="132" r="3.2" fill="#30D158"/>
+
+  <!-- row 2 -->
+  <circle cx="300" cy="162" r="4.2" fill="#4C8DFF"/>
+  <text x="320" y="166" font-size="12.5" fill="#C7C7CC">fix: 修正 VSKU 淘汰判断</text>
+  <text x="1010" y="166" font-size="10.5" fill="#8E8E93">李四</text>
+  <text x="1058" y="166" font-size="10.5" fill="#6E6E73">5 小时前</text>
+  <circle cx="1102" cy="162" r="3.2" fill="#30D158"/>
+
+  <!-- row 3 -->
+  <circle cx="300" cy="192" r="4.2" fill="#4C8DFF"/>
+  <text x="320" y="196" font-size="12.5" fill="#C7C7CC">merge: feature/stock-alloc</text>
+  <text x="1010" y="196" font-size="10.5" fill="#8E8E93">张三</text>
+  <text x="1058" y="196" font-size="10.5" fill="#6E6E73">6 小时前</text>
+
+  <!-- row 4 -->
+  <circle cx="316" cy="222" r="4.2" fill="#FF9F0A"/>
+  <rect x="336" y="214" width="86" height="16" rx="4" fill="none" stroke="#FF9F0A" stroke-width="1" opacity="0.7"/>
+  <text x="342" y="225.5" font-size="9.5" fill="#FF9F0A">feature/…</text>
+  <text x="432" y="226" font-size="12.5" fill="#C7C7CC">feat: 调拨单批量导出</text>
+  <text x="1010" y="226" font-size="10.5" fill="#8E8E93">王五</text>
+  <text x="1058" y="226" font-size="10.5" fill="#6E6E73">8 小时前</text>
+
+  <!-- row 5 -->
+  <circle cx="300" cy="252" r="4.2" fill="#4C8DFF"/>
+  <text x="320" y="256" font-size="12.5" fill="#C7C7CC">chore: 升级 composer 依赖</text>
+  <text x="1010" y="256" font-size="10.5" fill="#8E8E93">张三</text>
+  <text x="1058" y="256" font-size="10.5" fill="#6E6E73">昨天</text>
+
+  <!-- row 6 -->
+  <circle cx="300" cy="282" r="4.2" fill="#4C8DFF"/>
+  <text x="320" y="286" font-size="12.5" fill="#C7C7CC">docs: 补充调拨规则说明</text>
+  <text x="1010" y="286" font-size="10.5" fill="#8E8E93">李四</text>
+  <text x="1058" y="286" font-size="10.5" fill="#6E6E73">昨天</text>
+
+  <!-- row 7 -->
+  <circle cx="300" cy="312" r="4.2" fill="#4C8DFF"/>
+  <text x="320" y="316" font-size="12.5" fill="#C7C7CC">test: 补齐库存分配用例</text>
+  <text x="1010" y="316" font-size="10.5" fill="#8E8E93">张三</text>
+  <text x="1058" y="316" font-size="10.5" fill="#6E6E73">2 天前</text>
+
+  <!-- row 8 -->
+  <circle cx="300" cy="342" r="4.2" fill="#4C8DFF"/>
+  <text x="320" y="346" font-size="12.5" fill="#A1A1A6">refactor: 拆分 StockRepository</text>
+  <text x="1010" y="346" font-size="10.5" fill="#8E8E93">王五</text>
+  <text x="1058" y="346" font-size="10.5" fill="#6E6E73">2 天前</text>
+
+  <!-- row 9 -->
+  <circle cx="300" cy="372" r="4.2" fill="#4C8DFF" opacity="0.55"/>
+  <text x="320" y="376" font-size="12.5" fill="#8E8E93">style: 统一返回类型声明</text>
+  <text x="1010" y="376" font-size="10.5" fill="#6E6E73">李四</text>
+  <text x="1058" y="376" font-size="10.5" fill="#5A5A60">3 天前</text>
+
+  <!-- row 10 -->
+  <circle cx="300" cy="402" r="4.2" fill="#4C8DFF" opacity="0.55"/>
+  <text x="320" y="406" font-size="12.5" fill="#8E8E93">fix: 分拨单空指针</text>
+  <text x="1010" y="406" font-size="10.5" fill="#6E6E73">王五</text>
+  <text x="1058" y="406" font-size="10.5" fill="#5A5A60">3 天前</text>
+
+  <!-- row 11 -->
+  <circle cx="300" cy="432" r="4.2" fill="#4C8DFF" opacity="0.55"/>
+  <text x="320" y="436" font-size="12.5" fill="#8E8E93">chore: 更新 CI 缓存策略</text>
+  <text x="1010" y="436" font-size="10.5" fill="#6E6E73">张三</text>
+  <text x="1058" y="436" font-size="10.5" fill="#5A5A60">4 天前</text>
+
+  <!-- 加载更多 -->
+  <circle cx="300" cy="492" r="2" fill="#3A3A40"/>
+  <circle cx="300" cy="504" r="2" fill="#3A3A40"/>
+  <circle cx="300" cy="516" r="2" fill="#3A3A40"/>
+  <text x="320" y="518" font-size="11.5" fill="#5A5A60">正在加载更多提交…</text>
+
+  <!-- ===== diff 区 ===== -->
+  <line x1="260" y1="556" x2="1120" y2="556" stroke="#2A2A2F"/>
+  <rect x="260" y="557" width="860" height="34" fill="#1B1B1F"/>
+  <text x="280" y="579" font-size="11.5" fill="#C7C7CC">src/Service/StockAllocator.php</text>
+  <text x="470" y="579" font-size="10.5" fill="#30D158">+12</text>
+  <text x="500" y="579" font-size="10.5" fill="#FF453A">−4</text>
+  <text x="1060" y="579" font-size="10.5" fill="#6E6E73">并排</text>
+
+  <!-- hunk header -->
+  <rect x="260" y="591" width="860" height="22" fill="#1A2233"/>
+  <text x="280" y="606" font-size="11" fill="#64D2FF" font-family="'SF Mono', Menlo, monospace">@@ -42,7 +42,9 @@ class StockAllocator</text>
+
+  <!-- diff lines -->
+  <g font-family="'SF Mono', Menlo, monospace" font-size="11.5">
+    <text x="272" y="632" fill="#5A5A60">42</text><text x="300" y="632" fill="#5A5A60">42</text>
+    <text x="320" y="632" fill="#C7C7CC">    public function allocate(Order $order): void</text>
+
+    <text x="272" y="651" fill="#5A5A60">43</text><text x="300" y="651" fill="#5A5A60">43</text>
+    <text x="320" y="651" fill="#C7C7CC">    {</text>
+
+    <rect x="260" y="657" width="860" height="18" fill="#3A1D1F"/>
+    <text x="272" y="670" fill="#5A5A60">44</text><text x="300" y="670" fill="#5A5A60"> </text>
+    <text x="320" y="670" fill="#FF8A85">-        $channel = $order-&gt;channel;</text>
+
+    <rect x="260" y="675" width="860" height="18" fill="#3A1D1F"/>
+    <text x="272" y="688" fill="#5A5A60">45</text><text x="300" y="688" fill="#5A5A60"> </text>
+    <text x="320" y="688" fill="#FF8A85">-        $stock = $this-&gt;repo-&gt;find($channel);</text>
+
+    <rect x="260" y="693" width="860" height="18" fill="#16301F"/>
+    <text x="272" y="706" fill="#5A5A60"> </text><text x="300" y="706" fill="#5A5A60">44</text>
+    <text x="320" y="706" fill="#7EE2A0">+        $channel = $order-&gt;channel ?? $this-&gt;defaultChannel();</text>
+
+    <rect x="260" y="711" width="860" height="18" fill="#16301F"/>
+    <text x="272" y="724" fill="#5A5A60"> </text><text x="300" y="724" fill="#5A5A60">45</text>
+    <text x="320" y="724" fill="#7EE2A0">+        $stock = $this-&gt;repo-&gt;findByChannel($channel);</text>
+
+    <rect x="260" y="729" width="860" height="18" fill="#16301F"/>
+    <text x="272" y="742" fill="#5A5A60"> </text><text x="300" y="742" fill="#5A5A60">46</text>
+    <text x="320" y="742" fill="#7EE2A0">+        if ($stock === null) {</text>
+
+    <rect x="260" y="747" width="860" height="18" fill="#16301F"/>
+    <text x="272" y="760" fill="#5A5A60"> </text><text x="300" y="760" fill="#5A5A60">47</text>
+    <text x="320" y="760" fill="#7EE2A0">+            throw new StockNotFoundException($channel);</text>
+
+    <rect x="260" y="765" width="860" height="18" fill="#16301F"/>
+    <text x="272" y="778" fill="#5A5A60"> </text><text x="300" y="778" fill="#5A5A60">48</text>
+    <text x="320" y="778" fill="#7EE2A0">+        }</text>
+
+    <text x="272" y="797" fill="#5A5A60">46</text><text x="300" y="797" fill="#5A5A60">49</text>
+    <text x="320" y="797" fill="#C7C7CC">        $this-&gt;apply($order, $stock);</text>
+
+    <text x="272" y="816" fill="#5A5A60">47</text><text x="300" y="816" fill="#5A5A60">50</text>
+    <text x="320" y="816" fill="#C7C7CC">    }</text>
+  </g>
+
+  <!-- ===== 右侧检查器 ===== -->
+  <clipPath id="insp"><rect x="1120" y="52" width="320" height="800"/></clipPath>
+  <rect x="1120" y="52" width="320" height="800" fill="#1B1B1F"/>
+  <line x1="1120" y1="52" x2="1120" y2="852" stroke="#2A2A2F"/>
+
+  <g clip-path="url(#insp)">
+  <text x="1140" y="84" font-size="12.5" font-weight="600" fill="#F5F5F7">feat: 库存分配支持渠道维度</text>
+  <text x="1140" y="102" font-size="10.5" fill="#6E6E73">abc1234 · main · HEAD</text>
+
+  <circle cx="1148" cy="128" r="10" fill="#2F5FD0"/>
+  <text x="1148" y="132" font-size="9" fill="#FFFFFF" text-anchor="middle">张</text>
+  <text x="1166" y="126" font-size="11.5" fill="#C7C7CC">张三</text>
+  <text x="1166" y="139" font-size="10" fill="#6E6E73">zhang@corp.com · 2 小时前</text>
+
+  <line x1="1140" y1="158" x2="1420" y2="158" stroke="#26262B"/>
+
+  <text x="1140" y="182" font-size="11" fill="#8E8E93">12 个文件</text>
+  <text x="1210" y="182" font-size="11" fill="#30D158">+340</text>
+  <text x="1252" y="182" font-size="11" fill="#FF453A">−88</text>
+
+  <circle cx="1146" cy="206" r="3" fill="#30D158"/>
+  <text x="1156" y="210" font-size="10.5" fill="#A1A1A6">签名已验证</text>
+  <circle cx="1250" cy="206" r="3" fill="#30D158"/>
+  <text x="1260" y="210" font-size="10.5" fill="#A1A1A6">CI 通过</text>
+
+  <rect x="1140" y="228" width="260" height="28" rx="6" fill="#26262B"/>
+  <text x="1270" y="247" font-size="11.5" fill="#C7C7CC" text-anchor="middle">在 GitHub 打开</text>
+
+  <text x="1140" y="286" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">变更文件</text>
+  <text x="1140" y="306" font-size="11.5" fill="#C7C7CC">StockAllocator.php</text>
+  <text x="1418" y="306" font-size="10" fill="#30D158" text-anchor="end">+12</text>
+  <text x="1140" y="328" font-size="11.5" fill="#C7C7CC">StockRepository.php</text>
+  <text x="1418" y="328" font-size="10" fill="#30D158" text-anchor="end">+48</text>
+  <text x="1140" y="350" font-size="11.5" fill="#C7C7CC">AllocController.php</text>
+  <text x="1418" y="350" font-size="10" fill="#FF453A" text-anchor="end">−6</text>
+  <text x="1140" y="372" font-size="11.5" fill="#C7C7CC">AllocTest.php</text>
+  <text x="1418" y="372" font-size="10" fill="#30D158" text-anchor="end">+96</text>
+  <text x="1140" y="394" font-size="11.5" fill="#8E8E93">…还有 8 个文件</text>
+
+  <line x1="1140" y1="424" x2="1420" y2="424" stroke="#26262B"/>
+  <text x="1140" y="450" font-size="10.5" fill="#6E6E73" letter-spacing="0.6">推送预览</text>
+  <text x="1140" y="474" font-size="11.5" fill="#C7C7CC">将推送 2 个提交到 origin/main</text>
+  <text x="1140" y="494" font-size="11.5" fill="#C7C7CC">3 个文件 · +58 −12</text>
+  <rect x="1140" y="510" width="120" height="24" rx="5" fill="#1D2433"/>
+  <text x="1200" y="526" font-size="10.5" fill="#0A84FF" text-anchor="middle">查看推送内容</text>
+  </g>
+
+  <!-- ===== 底部命令日志 ===== -->
+  <rect x="0" y="852" width="1440" height="48" fill="#111113"/>
+  <line x1="0" y1="852" x2="1440" y2="852" stroke="#2A2A2F"/>
+  <text x="16" y="880" font-size="10.5" fill="#4C8DFF">▸</text>
+  <text x="30" y="880" font-size="10.5" fill="#8E8E93" font-family="'SF Mono', Menlo, monospace">git log --topo-order -n 300 --format=…</text>
+  <text x="512" y="880" font-size="10.5" fill="#30D158" font-family="'SF Mono', Menlo, monospace">84ms</text>
+  <text x="560" y="880" font-size="10.5" fill="#5A5A60" font-family="'SF Mono', Menlo, monospace">exit 0</text>
+  <text x="1372" y="880" font-size="10.5" fill="#6E6E73">1 个任务</text>
+</svg>
