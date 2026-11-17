@@ -56,6 +56,7 @@ interface GroveState {
   recents: string[]
   loading: boolean
   loadingMore: boolean
+  branchDialogOpen: boolean
   busy: string | null
   view: 'changes' | 'history'
   selectedFile: { path: string; scope: Scope } | null
@@ -148,6 +149,9 @@ interface GroveState {
   commit: (message: string, amend: boolean, sign: boolean) => Promise<boolean>
   checkout: (name: string) => Promise<void>
   createBranch: (name: string) => Promise<void>
+  refreshStatus: () => Promise<void>
+  openBranchDialog: () => void
+  closeBranchDialog: () => void
   deleteBranch: (name: string) => Promise<void>
   cherryPick: (shas: string[], noCommit: boolean) => Promise<void>
   undoCommit: () => Promise<void>
@@ -235,6 +239,7 @@ export const useStore = create<GroveState>((set, get) => {
     recents: loadRecents(),
     loading: false,
     loadingMore: false,
+    branchDialogOpen: false,
     busy: null,
     view: 'changes',
     selectedFile: null,
@@ -289,6 +294,14 @@ export const useStore = create<GroveState>((set, get) => {
       }
       const snap = get().snapshot
       if (!snap) return
+      const seen = new Set<string>()
+      const deduped = get().tabs.filter((t) => {
+        const key = t.snapshot.info.path
+        if (seen.has(key)) return false
+        seen.add(key)
+        return true
+      })
+      if (deduped.length !== get().tabs.length) set({ tabs: deduped })
       const params = new URLSearchParams(location.search)
       const envUi = await api.initialUi().catch(() => null)
       const ui = params.get('ui') ?? envUi
@@ -311,6 +324,7 @@ export const useStore = create<GroveState>((set, get) => {
       if (ui === 'journal') void get().openJournal()
       if (ui === 'protected') void get().openProtected()
       if (ui === 'worktree') get().openWorktreeDialog()
+      if (ui === 'branch') get().openBranchDialog()
       if (ui === 'stashpreview' && snap.stashes[0]) {
         void get().openStashPreview(snap.stashes[0].selector, snap.stashes[0].message)
       }
@@ -377,6 +391,7 @@ export const useStore = create<GroveState>((set, get) => {
           selectedCommitFile: null,
         })
         persistTabs()
+        void api.watchRepo(snap.info.path)
         const first = snap.status.unstaged[0] ?? snap.status.staged[0] ?? snap.status.conflicts[0]
         if (first) {
           void get().selectFile(
@@ -417,6 +432,7 @@ export const useStore = create<GroveState>((set, get) => {
       document.title = `${target.name} — Grove`
       localStorage.setItem(LAST_KEY, target.path)
       persistTabs()
+      void api.watchRepo(target.path)
       void api
         .localOnly(target.path)
         .then((localOnly) => set({ localOnly }))
@@ -452,6 +468,23 @@ export const useStore = create<GroveState>((set, get) => {
         persistTabs()
       }
     },
+    refreshStatus: async () => {
+      const st = get()
+      if (!st.snapshot || st.busy) return
+      try {
+        const status = await api.status(st.snapshot.info.path)
+        const cur = get().snapshot
+        if (!cur) return
+        set({ snapshot: { ...cur, status } })
+        persistActive()
+      } catch {
+        /* ignore transient failures */
+      }
+    },
+
+    openBranchDialog: () => set({ branchDialogOpen: true }),
+    closeBranchDialog: () => set({ branchDialogOpen: false }),
+
     refresh: async () => {
       const snap = get().snapshot
       if (!snap) return
@@ -1009,6 +1042,7 @@ export const useStore = create<GroveState>((set, get) => {
       const snap = get().snapshot
       if (!snap) return
       await runOp('新建分支', () => api.createBranch(snap.info.path, name))
+      set({ branchDialogOpen: false })
     },
 
     deleteBranch: async (name) => {

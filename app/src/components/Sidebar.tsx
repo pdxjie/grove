@@ -72,8 +72,6 @@ export function Sidebar() {
 
   const [query, setQuery] = useState('')
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
-  const [creating, setCreating] = useState(false)
-  const [name, setName] = useState('')
   const [repoMenu, setRepoMenu] = useState<{ x: number; y: number } | null>(null)
   const [menu, setMenu] = useState<{ x: number; y: number; branch: Branch } | null>(null)
   const [stashMenu, setStashMenu] = useState<{ x: number; y: number; selector: string; message: string } | null>(null)
@@ -352,36 +350,7 @@ export function Sidebar() {
           </div>
         ) : (
           <>
-            <Section
-              id="branches"
-              title="分支"
-              count={locals.length}
-              action={
-                <button onClick={() => setCreating(true)} className="icon-btn h-5 w-5" title="新建分支">
-                  <Plus size={12} />
-                </button>
-              }
-            >
-              {creating && (
-                <form
-                  className="px-1 pb-1"
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    if (name.trim()) void createBranch(name.trim())
-                    setName('')
-                    setCreating(false)
-                  }}
-                >
-                  <input
-                    autoFocus
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    onBlur={() => setCreating(false)}
-                    placeholder="feature/新分支"
-                    className="h-[25px] w-full rounded-[6px] border border-accent/50 bg-panel px-2 text-[11px] text-ink outline-none placeholder:text-faint"
-                  />
-                </form>
-              )}
+            <Section id="branches" title="分支" count={locals.length}>
               {renderTree(localTree, 0)}
               {locals.length === 0 && <div className="px-2 py-1 text-[10.5px] text-faint">没有分支</div>}
             </Section>

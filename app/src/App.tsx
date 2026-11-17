@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
 import { Toaster } from 'sonner'
+import { listen } from '@tauri-apps/api/event'
 import { CommandLog } from './components/CommandLog'
 import { CompareDialog } from './components/CompareDialog'
 import { JournalDialog } from './components/JournalDialog'
 import { LocalOnlyDialog } from './components/LocalOnlyDialog'
 import { ProtectedDialog } from './components/ProtectedDialog'
+import { BranchDialog } from './components/BranchDialog'
 import { WorktreeDialog } from './components/WorktreeDialog'
 import { RebaseDialog } from './components/RebaseDialog'
 import { ConflictCenter } from './components/ConflictCenter'
@@ -19,6 +21,7 @@ import { VDivider } from './components/VDivider'
 import { useLayoutWidth } from './lib/useLayout'
 import { TitleBar } from './components/TitleBar'
 import { Welcome } from './components/Welcome'
+import { IS_TAURI } from './lib/api'
 import { useStore } from './lib/store'
 import { ChangesView } from './views/ChangesView'
 import { HistoryView } from './views/HistoryView'
@@ -31,6 +34,33 @@ export default function App() {
 
   useEffect(() => {
     void useStore.getState().boot()
+  }, [])
+
+  useEffect(() => {
+    if (!IS_TAURI) return
+    let timer: number | undefined
+    let wantsRefs = false
+    const schedule = (refs: boolean) => {
+      if (refs) wantsRefs = true
+      window.clearTimeout(timer)
+      timer = window.setTimeout(() => {
+        const st = useStore.getState()
+        const refetch = wantsRefs
+        wantsRefs = false
+        if (!st.snapshot || st.busy) return
+        if (refetch) void st.refresh()
+        else void st.refreshStatus()
+      }, 380)
+    }
+    let un1: (() => void) | undefined
+    let un2: (() => void) | undefined
+    void listen('repo:worktree', () => schedule(false)).then((u) => (un1 = u))
+    void listen('repo:refs', () => schedule(true)).then((u) => (un2 = u))
+    return () => {
+      window.clearTimeout(timer)
+      un1?.()
+      un2?.()
+    }
   }, [])
 
   useEffect(() => {
@@ -147,6 +177,7 @@ export default function App() {
       <LocalOnlyDialog />
       <ProtectedDialog />
       <WorktreeDialog />
+      <BranchDialog />
       <JournalDialog />
       <Toaster
         position="bottom-right"

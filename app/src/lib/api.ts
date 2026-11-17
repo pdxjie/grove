@@ -145,6 +145,11 @@ export const api = {
     })
   },
 
+  async watchRepo(path: string): Promise<void> {
+    if (!IS_TAURI) return
+    return call('watch_repo', { path })
+  },
+
   async authors(path: string): Promise<string[]> {
     if (!IS_TAURI) return ['张三', '李四', '王五']
     return call<string[]>('authors', { path })

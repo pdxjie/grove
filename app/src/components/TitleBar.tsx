@@ -1,4 +1,4 @@
-import { Moon, Plus, RefreshCw, Search, Sun } from 'lucide-react'
+import { GitBranchPlus, Moon, Plus, RefreshCw, Search, Sun } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { IS_TAURI } from '../lib/api'
 import { beginWindowDrag, beginWindowMaximize } from '../lib/window'
@@ -65,7 +65,14 @@ export function TitleBar() {
 
         <div className="no-drag pointer-events-auto flex w-[190px] shrink-0 items-center justify-end gap-0.5">
           {snapshot && (
-            <IconButton icon={RefreshCw} label="刷新 (⌘R)" onClick={() => void refresh()} />
+            <>
+              <IconButton
+                icon={GitBranchPlus}
+                label="新建分支"
+                onClick={() => useStore.getState().openBranchDialog()}
+              />
+              <IconButton icon={RefreshCw} label="刷新 (⌘R)" onClick={() => void refresh()} />
+            </>
           )}
           <IconButton
             icon={theme === 'dark' ? Sun : Moon}
