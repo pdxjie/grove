@@ -1,7 +1,9 @@
 # Grove（暂定名）
 
 > 快、稳、好看的 macOS Git 客户端。
-> **状态：v0.1 可运行骨架** · Tauri 2 + Rust 内核 + React 19 + Tailwind。
+> **状态：v0.1 可运行** · Tauri 2 + Rust 内核 + React 19 + Tailwind。
+>
+> [**下载安装包**](https://github.com/pdxjie/grove/releases/latest)（Apple Silicon，macOS 12+）
 
 ![变更视图 · 暗色](docs/screenshots/changes-dark.png)
 
