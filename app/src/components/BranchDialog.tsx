@@ -44,7 +44,7 @@ export function BranchDialog() {
               if (e.key === 'Enter') submit()
             }}
             placeholder="feature/stock-alloc"
-            className="field h-[30px] font-mono text-[12px]"
+            className="field h-[30px] font-mono text-[13px]"
           />
         </Field>
         <div className="flex justify-end gap-2">

@@ -127,8 +127,8 @@ export function HistoryView() {
     <div className="flex min-h-0 flex-1">
       <div className="relative flex min-w-0 flex-1 flex-col">
         <div onMouseDown={beginWindowDrag} onDoubleClick={beginWindowMaximize} className="flex h-[38px] shrink-0 items-center gap-1.5 border-b border-line/70 px-3">
-          <span className="text-[11px] font-medium text-ink">历史</span>
-          <span className="text-[10px] tabular-nums text-faint">{commits.length}</span>
+          <span className="text-[12px] font-medium text-ink">历史</span>
+          <span className="text-[11px] tabular-nums text-faint">{commits.length}</span>
           <div className="ml-2">
             <Select
               value={filter.branch}
@@ -163,7 +163,7 @@ export function HistoryView() {
           <button
             onClick={() => void loadHistory({ firstParent: !filter.firstParent })}
             className={cn(
-              'flex h-[22px] items-center rounded-[5px] border px-1.5 text-[10px] transition',
+              'flex h-[22px] items-center rounded-[5px] border px-1.5 text-[11px] transition',
               filter.firstParent
                 ? 'border-accent/40 bg-accent/10 text-accent'
                 : 'border-line bg-panel text-faint hover:text-muted',
@@ -172,10 +172,10 @@ export function HistoryView() {
           >
             简化图
           </button>
-          <span className="ml-auto text-[10px] text-faint">右键可遴选 / 复制</span>
+          <span className="ml-auto text-[11px] text-faint">右键可遴选 / 复制</span>
           <button
             onClick={() => void useStore.getState().openRebase()}
-            className="flex h-[22px] items-center gap-1 rounded-[5px] border border-line bg-panel px-1.5 text-[10px] text-muted transition hover:border-linestrong hover:text-ink"
+            className="flex h-[22px] items-center gap-1 rounded-[5px] border border-line bg-panel px-1.5 text-[11px] text-muted transition hover:border-linestrong hover:text-ink"
             title="交互式变基：整理最近几个提交"
           >
             <SlidersHorizontal size={10} />
@@ -220,11 +220,11 @@ export function HistoryView() {
                       <RefChip key={r} label={r} lane={row.lane} />
                     ))}
                   </div>
-                  <span className="min-w-0 flex-1 truncate text-[12px] text-ink/90">{c.subject}</span>
+                  <span className="min-w-0 flex-1 truncate text-[13px] text-ink/90">{c.subject}</span>
                 </div>
-                <span className="w-[52px] shrink-0 truncate text-right text-[10.5px] text-faint">{c.author}</span>
-                <span className="w-[48px] shrink-0 text-right text-[10px] text-faint">{timeAgo(c.time)}</span>
-                <span className="w-[52px] shrink-0 text-right font-mono text-[10px] text-faint/80">
+                <span className="w-[52px] shrink-0 truncate text-right text-[11.5px] text-faint">{c.author}</span>
+                <span className="w-[48px] shrink-0 text-right text-[11px] text-faint">{timeAgo(c.time)}</span>
+                <span className="w-[52px] shrink-0 text-right font-mono text-[11px] text-faint/80">
                   {shortSha(c.sha)}
                 </span>
               </div>
@@ -233,16 +233,16 @@ export function HistoryView() {
           <div style={{ height: Math.max(0, (total - end) * ROW_H) }} />
           <div className="flex h-[44px] items-center justify-center">
             {loadingMore ? (
-              <span className="text-[10px] text-faint">加载更多提交…</span>
+              <span className="text-[11px] text-faint">加载更多提交…</span>
             ) : hasMore ? (
               <button
                 onClick={() => void loadMoreHistory()}
-                className="rounded-[6px] border border-line bg-panel px-2 py-[3px] text-[10.5px] text-muted transition hover:border-linestrong hover:text-ink"
+                className="rounded-[6px] border border-line bg-panel px-2 py-[3px] text-[11.5px] text-muted transition hover:border-linestrong hover:text-ink"
               >
                 加载更多
               </button>
             ) : total > 0 ? (
-              <span className="text-[10px] text-faint/60">已加载全部 {total} 条</span>
+              <span className="text-[11px] text-faint/60">已加载全部 {total} 条</span>
             ) : null}
           </div>
           {commits.length === 0 && (
@@ -252,7 +252,7 @@ export function HistoryView() {
 
         {checked.size > 0 && (
           <div className="pointer-events-auto absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-[10px] border border-line-strong/70 bg-panel2/95 px-3 py-1.5 shadow-pop backdrop-blur-xl">
-            <span className="text-[11px] text-muted">
+            <span className="text-[12px] text-muted">
               已选 <span className="font-semibold text-ink">{checked.size}</span> 个提交
             </span>
             <div className="h-4 w-px bg-line" />
@@ -262,7 +262,7 @@ export function HistoryView() {
             <Button size="sm" variant="ghost" onClick={() => void cherryPick([...checked], true)}>
               仅到工作区
             </Button>
-            <button onClick={() => setChecked(new Set())} className="text-[10.5px] text-faint hover:text-muted">
+            <button onClick={() => setChecked(new Set())} className="text-[11.5px] text-faint hover:text-muted">
               清除
             </button>
           </div>
@@ -274,9 +274,9 @@ export function HistoryView() {
         {detail ? (
           <>
             <div className="shrink-0 border-b border-line/70 px-3.5 pb-2.5 pt-3">
-              <div className="text-[13px] font-medium leading-[18px] text-ink">{detail.commit.subject}</div>
-              <div className="mt-1.5 flex items-center gap-2 text-[10.5px] text-faint">
-                <span className="font-mono text-[10px]">{shortSha(detail.commit.sha)}</span>
+              <div className="text-[14px] font-medium leading-[18px] text-ink">{detail.commit.subject}</div>
+              <div className="mt-1.5 flex items-center gap-2 text-[11.5px] text-faint">
+                <span className="font-mono text-[11px]">{shortSha(detail.commit.sha)}</span>
                 <span>·</span>
                 <span>{detail.commit.author}</span>
                 <span>·</span>
@@ -294,14 +294,14 @@ export function HistoryView() {
                   key={f.path}
                   onClick={() => void selectCommitFile(f.path)}
                   className={cn(
-                    'flex h-[24px] w-full items-center gap-2 px-3.5 text-left text-[11px] transition',
+                    'flex h-[24px] w-full items-center gap-2 px-3.5 text-left text-[12px] transition',
                     selectedCommitFile === f.path ? 'bg-elevated/70 text-ink' : 'text-muted hover:bg-elevated/40',
                   )}
                 >
                   <StatusBadge status={f.status} />
                   <span className="min-w-0 flex-1 truncate">{f.path}</span>
-                  <span className="shrink-0 text-[10px] text-green">+{f.additions}</span>
-                  <span className="shrink-0 text-[10px] text-red">−{f.deletions}</span>
+                  <span className="shrink-0 text-[11px] text-green">+{f.additions}</span>
+                  <span className="shrink-0 text-[11px] text-red">−{f.deletions}</span>
                 </button>
               ))}
             </div>
@@ -329,7 +329,7 @@ function StatusBadge({ status }: { status: string }) {
         : status === 'R'
           ? 'text-blue'
           : 'text-amber'
-  return <span className={cn('w-[9px] shrink-0 text-center text-[10px] font-semibold', color)}>{status}</span>
+  return <span className={cn('w-[9px] shrink-0 text-center text-[11px] font-semibold', color)}>{status}</span>
 }
 
 function RefChip({ label, lane }: { label: string; lane: number }) {
@@ -341,7 +341,7 @@ function RefChip({ label, lane }: { label: string; lane: number }) {
   if (isHead) {
     return (
       <span
-        className="inline-flex h-[16px] max-w-[120px] shrink-0 items-center gap-1 rounded-[4px] px-1.5 text-[9.5px] font-semibold text-[rgb(var(--accent-ink))]"
+        className="inline-flex h-[16px] max-w-[120px] shrink-0 items-center gap-1 rounded-[4px] px-1.5 text-[10.5px] font-semibold text-[rgb(var(--accent-ink))]"
         style={{ background: laneColor(lane) }}
       >
         <Check size={8} strokeWidth={3.5} />
@@ -351,7 +351,7 @@ function RefChip({ label, lane }: { label: string; lane: number }) {
   }
   if (isTag) {
     return (
-      <span className="inline-flex h-[16px] max-w-[100px] shrink-0 items-center gap-1 rounded-[4px] border border-amber/40 bg-amber/10 px-1.5 text-[9.5px] text-amber">
+      <span className="inline-flex h-[16px] max-w-[100px] shrink-0 items-center gap-1 rounded-[4px] border border-amber/40 bg-amber/10 px-1.5 text-[10.5px] text-amber">
         <Tag size={8} />
         <span className="truncate">{name}</span>
       </span>
@@ -360,7 +360,7 @@ function RefChip({ label, lane }: { label: string; lane: number }) {
   return (
     <span
       className={cn(
-        'inline-flex h-[16px] max-w-[110px] shrink-0 items-center rounded-[4px] border px-1.5 text-[9.5px]',
+        'inline-flex h-[16px] max-w-[110px] shrink-0 items-center rounded-[4px] border px-1.5 text-[10.5px]',
         isRemote ? 'border-blue/30 bg-blue/8 text-blue/90' : 'border-line bg-elevated/60 text-muted',
       )}
     >

@@ -44,7 +44,7 @@ export function TitleBar() {
             <Logo size={19} />
           </span>
           <span className="text-[14px] font-semibold tracking-[-0.02em] text-ink">grove</span>
-          <span className="mt-[1px] text-[9px] font-medium uppercase tracking-[0.14em] text-faint">git</span>
+          <span className="mt-[1px] text-[10px] font-medium uppercase tracking-[0.14em] text-faint">git</span>
         </div>
 
         <div className="flex flex-1 justify-center px-4">
@@ -53,7 +53,7 @@ export function TitleBar() {
             className="no-drag pointer-events-auto group flex h-[29px] w-full max-w-[360px] items-center gap-2 rounded-[8px] border border-line bg-panel/70 px-2.5 text-left transition hover:border-linestrong hover:bg-panel"
           >
             <Search size={12} className="text-faint transition group-hover:text-muted" />
-            <span className="flex-1 truncate text-[11px] text-faint">
+            <span className="flex-1 truncate text-[12px] text-faint">
               {snapshot ? '搜索分支、提交或操作' : '打开仓库，开始工作'}
             </span>
             <span className="flex items-center gap-0.5">
@@ -82,7 +82,7 @@ export function TitleBar() {
           <div className="mx-1 h-4 w-px bg-line" />
           <button
             onClick={() => void openRepo()}
-            className="flex h-[27px] items-center gap-1 rounded-[7px] border border-line bg-elevated px-2 text-[11px] font-medium text-ink transition hover:border-linestrong hover:bg-panel2"
+            className="flex h-[27px] items-center gap-1 rounded-[7px] border border-line bg-elevated px-2 text-[12px] font-medium text-ink transition hover:border-linestrong hover:bg-panel2"
           >
             <Plus size={12} className="text-accent" />
             打开仓库

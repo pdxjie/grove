@@ -59,7 +59,7 @@ export function Select({
         onClick={() => setOpen((o) => !o)}
         title={title}
         className={cn(
-          'flex h-[23px] items-center gap-1 rounded-[6px] border px-1.5 text-[10.5px] transition',
+          'flex h-[23px] items-center gap-1 rounded-[6px] border px-1.5 text-[11.5px] transition',
           open
             ? 'border-accent/50 bg-panel2 text-ink'
             : 'border-line bg-panel text-muted hover:border-linestrong hover:text-ink',
@@ -86,7 +86,7 @@ export function Select({
               return (
                 <div key={`${o.group ?? ''}-${o.value}`}>
                   {header && (
-                    <div className="px-2 pb-0.5 pt-1.5 text-[9px] uppercase tracking-[0.12em] text-faint/80">
+                    <div className="px-2 pb-0.5 pt-1.5 text-[10px] uppercase tracking-[0.12em] text-faint/80">
                       {header}
                     </div>
                   )}
@@ -99,7 +99,7 @@ export function Select({
                     }}
                     className={cn(
                       o.disabled && 'pointer-events-none opacity-35',
-                      'flex h-[26px] w-full items-center gap-2 rounded-[6px] px-2 text-left text-[11px] transition',
+                      'flex h-[26px] w-full items-center gap-2 rounded-[6px] px-2 text-left text-[12px] transition',
                       o.value === value
                         ? 'bg-elevated text-ink'
                         : 'text-muted hover:bg-elevated/60 hover:text-ink',
@@ -108,7 +108,7 @@ export function Select({
                   >
                     {o.icon && <o.icon size={12} className="shrink-0 text-faint" />}
                     <span className="min-w-0 flex-1 truncate">{o.label}</span>
-                    {o.hint && <span className="shrink-0 text-[9.5px] text-faint">{o.hint}</span>}
+                    {o.hint && <span className="shrink-0 text-[10.5px] text-faint">{o.hint}</span>}
                     {o.value === value && <Check size={11} strokeWidth={2.6} className="shrink-0 text-accent" />}
                   </button>
                 </div>

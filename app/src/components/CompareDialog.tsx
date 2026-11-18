@@ -17,12 +17,12 @@ export function CompareDialog() {
         onClose={close}
       />
       {!data ? (
-        <div className="flex h-[160px] items-center justify-center gap-2 text-[11.5px] text-faint">
+        <div className="flex h-[160px] items-center justify-center gap-2 text-[12.5px] text-faint">
           <Spinner size={13} /> 读取分支差异
         </div>
       ) : (
         <div className="space-y-3 p-4">
-          <div className="flex items-center gap-3 rounded-[9px] border border-line/70 bg-panel/40 px-3 py-2 text-[11px]">
+          <div className="flex items-center gap-3 rounded-[9px] border border-line/70 bg-panel/40 px-3 py-2 text-[12px]">
             <span className="text-faint">{data.fileCount} 个文件</span>
             <span className="text-green">+{data.additions}</span>
             <span className="text-red">−{data.deletions}</span>
@@ -46,7 +46,7 @@ export function CompareDialog() {
           />
 
           {data.ahead.length === 0 && data.behind.length === 0 && (
-            <div className="flex items-center justify-center gap-2 py-5 text-[11px] text-faint">
+            <div className="flex items-center justify-center gap-2 py-5 text-[12px] text-faint">
               <GitCompare size={13} /> 两个分支的提交历史一致
             </div>
           )}
@@ -69,21 +69,21 @@ function Section({
 }) {
   return (
     <div className="overflow-hidden rounded-[9px] border border-line/70">
-      <div className="flex items-center gap-1.5 border-b border-line/50 bg-panel/60 px-3 py-1.5 text-[10px] text-faint">
+      <div className="flex items-center gap-1.5 border-b border-line/50 bg-panel/60 px-3 py-1.5 text-[11px] text-faint">
         {icon}
         {title}
         <span className="ml-auto tabular-nums">{commits.length}</span>
       </div>
       {commits.length === 0 ? (
-        <div className="px-3 py-2.5 text-[10.5px] text-faint">{empty}</div>
+        <div className="px-3 py-2.5 text-[11.5px] text-faint">{empty}</div>
       ) : (
         <div className="max-h-[220px] overflow-y-auto scroll-thin">
           {commits.map((c) => (
             <div key={c.sha} className="flex items-center gap-2 border-b border-line/30 px-3 py-[6px] last:border-0">
-              <span className="min-w-0 flex-1 truncate text-[11.5px] text-ink/90">{c.subject}</span>
-              <span className="shrink-0 text-[10px] text-faint">{c.author}</span>
-              <span className="w-[46px] shrink-0 text-right text-[9.5px] text-faint/70">{timeAgo(c.time)}</span>
-              <span className="w-[50px] shrink-0 text-right font-mono text-[9.5px] text-faint/70">{shortSha(c.sha)}</span>
+              <span className="min-w-0 flex-1 truncate text-[12.5px] text-ink/90">{c.subject}</span>
+              <span className="shrink-0 text-[11px] text-faint">{c.author}</span>
+              <span className="w-[46px] shrink-0 text-right text-[10.5px] text-faint/70">{timeAgo(c.time)}</span>
+              <span className="w-[50px] shrink-0 text-right font-mono text-[10.5px] text-faint/70">{shortSha(c.sha)}</span>
             </div>
           ))}
         </div>

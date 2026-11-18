@@ -33,7 +33,7 @@ export function WorktreeDialog() {
           <input
             value={target}
             onChange={(e) => setTarget(e.target.value)}
-            className="field h-[30px] font-mono text-[11.5px]"
+            className="field h-[30px] font-mono text-[12.5px]"
             placeholder="/path/to/worktree"
           />
         </Field>
@@ -41,7 +41,7 @@ export function WorktreeDialog() {
           <input
             value={branch}
             onChange={(e) => setBranch(e.target.value)}
-            className="field h-[30px] font-mono text-[11.5px]"
+            className="field h-[30px] font-mono text-[12.5px]"
             placeholder="feature/parallel"
           />
         </Field>

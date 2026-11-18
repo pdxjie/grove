@@ -197,21 +197,21 @@ export function Sidebar() {
           <div className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-line bg-panel text-faint">
             <FolderGit2 size={17} strokeWidth={1.6} />
           </div>
-          <div className="text-[12px] leading-5 text-muted">还没有打开仓库</div>
+          <div className="text-[13px] leading-5 text-muted">还没有打开仓库</div>
           <button
             onClick={() => void openRepo()}
-            className="mt-1 flex h-[27px] items-center gap-1.5 rounded-[7px] bg-accent px-3 text-[11.5px] font-semibold text-[rgb(var(--accent-ink))] transition hover:brightness-110"
+            className="mt-1 flex h-[27px] items-center gap-1.5 rounded-[7px] bg-accent px-3 text-[12.5px] font-semibold text-[rgb(var(--accent-ink))] transition hover:brightness-110"
           >
             <Plus size={12} strokeWidth={2.4} /> 打开仓库
           </button>
           {recents.length > 0 && (
             <div className="mt-2 w-full">
-              <div className="mb-1 text-left text-[10px] uppercase tracking-[0.12em] text-faint">最近</div>
+              <div className="mb-1 text-left text-[11px] uppercase tracking-[0.12em] text-faint">最近</div>
               {recents.slice(0, 5).map((r) => (
                 <button
                   key={r}
                   onClick={() => void openRepo(r)}
-                  className="flex w-full items-center gap-2 rounded-[6px] px-2 py-1.5 text-left text-[11px] text-muted transition hover:bg-elevated hover:text-ink"
+                  className="flex w-full items-center gap-2 rounded-[6px] px-2 py-1.5 text-left text-[12px] text-muted transition hover:bg-elevated hover:text-ink"
                 >
                   <FolderGit2 size={12} className="shrink-0 text-faint" />
                   <span className="truncate">{r.split('/').filter(Boolean).pop()}</span>
@@ -244,12 +244,12 @@ export function Sidebar() {
         )}
         <span className="min-w-0 flex-1 truncate">{b.name.split('/').slice(depth).join('/')}</span>
         {!remote && (b.ahead > 0 || b.behind > 0) && (
-          <span className="flex shrink-0 items-center gap-1 text-[9.5px] tabular-nums">
+          <span className="flex shrink-0 items-center gap-1 text-[10.5px] tabular-nums">
             {b.ahead > 0 && <span className="text-amber">↑{b.ahead}</span>}
             {b.behind > 0 && <span className="text-blue">↓{b.behind}</span>}
           </span>
         )}
-        {b.gone && <span className="shrink-0 text-[9px] text-red">gone</span>}
+        {b.gone && <span className="shrink-0 text-[10px] text-red">gone</span>}
       </button>
       {!remote && !b.current && (
         <span className="absolute right-1.5 top-1/2 hidden -translate-y-1/2 group-hover:flex">
@@ -292,7 +292,7 @@ export function Sidebar() {
               )}
               <Folder size={12} className="shrink-0 text-faint/80" />
               <span className="min-w-0 flex-1 truncate text-muted">{node.label}</span>
-              <span className="shrink-0 text-[9px] tabular-nums text-faint/70">{countBranches(node)}</span>
+              <span className="shrink-0 text-[10px] tabular-nums text-faint/70">{countBranches(node)}</span>
             </button>
             {open && <div>{renderTree(node.children, depth + 1, remote)}</div>}
           </div>
@@ -310,10 +310,10 @@ export function Sidebar() {
         >
           <div className="flex items-center gap-2">
             <FolderGit2 size={13} className="shrink-0 text-accent" />
-            <span className="min-w-0 flex-1 truncate text-[12px] font-medium text-ink">{snap.info.name}</span>
+            <span className="min-w-0 flex-1 truncate text-[13px] font-medium text-ink">{snap.info.name}</span>
             <ChevronDown size={12} className="text-faint" />
           </div>
-          <div className="mt-1 truncate pl-[21px] text-[10px] text-faint">
+          <div className="mt-1 truncate pl-[21px] text-[11px] text-faint">
             {snap.info.path.replace(/^\/Users\/[^/]+/, '~')}
           </div>
         </button>
@@ -326,7 +326,7 @@ export function Sidebar() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="搜索分支"
-            className="h-full min-w-0 flex-1 bg-transparent text-[11px] text-ink outline-none placeholder:text-faint"
+            className="h-full min-w-0 flex-1 bg-transparent text-[12px] text-ink outline-none placeholder:text-faint"
           />
           {query && (
             <button onClick={() => setQuery('')} className="shrink-0 text-faint hover:text-muted">
@@ -339,25 +339,25 @@ export function Sidebar() {
       <div className="min-h-0 flex-1 overflow-y-auto px-2 py-1 scroll-thin">
         {q ? (
           <div className="mb-2">
-            <div className="flex h-[22px] items-center px-1 text-[10px] uppercase tracking-[0.1em] text-faint">
+            <div className="flex h-[22px] items-center px-1 text-[11px] uppercase tracking-[0.1em] text-faint">
               搜索结果 {localHits.length + remoteHits.length}
             </div>
             {localHits.map((b) => renderBranch(b, 0))}
             {remoteHits.map((b) => renderBranch(b, 0, true))}
             {localHits.length + remoteHits.length === 0 && (
-              <div className="px-2 py-2 text-[10.5px] text-faint">没有匹配的分支</div>
+              <div className="px-2 py-2 text-[11.5px] text-faint">没有匹配的分支</div>
             )}
           </div>
         ) : (
           <>
             <Section id="branches" title="分支" count={locals.length}>
               {renderTree(localTree, 0)}
-              {locals.length === 0 && <div className="px-2 py-1 text-[10.5px] text-faint">没有分支</div>}
+              {locals.length === 0 && <div className="px-2 py-1 text-[11.5px] text-faint">没有分支</div>}
             </Section>
 
             <Section id="remotes" title="远程" count={remotes.length} defaultOpen={false}>
               {renderTree(remoteTree, 0, true)}
-              {remotes.length === 0 && <div className="px-2 py-1 text-[10.5px] text-faint">没有远端分支</div>}
+              {remotes.length === 0 && <div className="px-2 py-1 text-[11.5px] text-faint">没有远端分支</div>}
             </Section>
           </>
         )}
@@ -384,10 +384,10 @@ export function Sidebar() {
                 title={w.path}
               >
                 <FolderTree size={12} className="shrink-0 text-teal/80" />
-                <span className="min-w-0 flex-1 truncate text-[11px] text-muted group-hover:text-ink">
+                <span className="min-w-0 flex-1 truncate text-[12px] text-muted group-hover:text-ink">
                   {w.branch ?? 'detached'}
                 </span>
-                <span className="shrink-0 text-[9px] text-faint">{w.main ? '主' : ''}</span>
+                <span className="shrink-0 text-[10px] text-faint">{w.main ? '主' : ''}</span>
               </button>
               {!w.main && (
                 <button
@@ -412,7 +412,7 @@ export function Sidebar() {
             </button>
           }
         >
-          {snap.stashes.length === 0 && <div className="px-2 py-1 text-[10.5px] text-faint">没有贮藏</div>}
+          {snap.stashes.length === 0 && <div className="px-2 py-1 text-[11.5px] text-faint">没有贮藏</div>}
           {snap.stashes.map((s) => (
             <div
               key={s.selector}
@@ -428,8 +428,8 @@ export function Sidebar() {
                 title="查看贮藏内容（右键更多操作）"
               >
                 <Archive size={12} className="shrink-0 text-violet/80" />
-                <span className="min-w-0 flex-1 truncate text-[11px] text-muted group-hover:text-ink">{s.message}</span>
-                <span className="shrink-0 text-[9px] text-faint">{timeAgo(s.time)}</span>
+                <span className="min-w-0 flex-1 truncate text-[12px] text-muted group-hover:text-ink">{s.message}</span>
+                <span className="shrink-0 text-[10px] text-faint">{timeAgo(s.time)}</span>
               </button>
               <button
                 onClick={() => void stashDrop(s.selector)}
@@ -444,7 +444,7 @@ export function Sidebar() {
       </div>
 
       <div className="border-t border-line/60 px-3 py-2">
-        <div className="flex items-center justify-between text-[10px] text-faint">
+        <div className="flex items-center justify-between text-[11px] text-faint">
           <span className="truncate">{snap.info.upstream ?? '未设置上游'}</span>
           <span className="shrink-0">
             {snap.info.ahead > 0 ? `↑${snap.info.ahead}` : ''} {snap.info.behind > 0 ? `↓${snap.info.behind}` : ''}
@@ -494,7 +494,7 @@ export function Sidebar() {
               autoFocus
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
-              className="field h-[30px] text-[12px]"
+              className="field h-[30px] text-[13px]"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && renameTarget && newName.trim()) {
                   void useStore.getState().renameBranch(renameTarget.name, newName.trim())
@@ -526,17 +526,17 @@ export function Sidebar() {
       <Modal open={!!switchTarget} onClose={() => setSwitchTarget(null)} width={420}>
         <ModalHeader title="切换分支" onClose={() => setSwitchTarget(null)} />
         <div className="space-y-3 p-4">
-          <div className="rounded-[9px] border border-line/70 bg-panel/40 px-3 py-2.5 text-[11.5px] leading-5 text-muted">
+          <div className="rounded-[9px] border border-line/70 bg-panel/40 px-3 py-2.5 text-[12.5px] leading-5 text-muted">
             从 <span className="font-medium text-ink">{snap.info.branch}</span> 切换到{' '}
             <span className="font-medium text-ink">{switchTarget?.name}</span>
             {switchTarget?.remote && (
-              <div className="mt-1 text-[10.5px] text-blue/90">
+              <div className="mt-1 text-[11.5px] text-blue/90">
                 这是远程分支，将自动创建同名本地分支并跟踪它。
               </div>
             )}
           </div>
           {(snap.status.staged.length > 0 || snap.status.unstaged.length > 0 || snap.status.conflicts.length > 0) && (
-            <div className="rounded-[8px] border border-amber/30 bg-amber/8 px-2.5 py-2 text-[10.5px] leading-[16px] text-amber/90">
+            <div className="rounded-[8px] border border-amber/30 bg-amber/8 px-2.5 py-2 text-[11.5px] leading-[16px] text-amber/90">
               当前有 {snap.status.staged.length + snap.status.unstaged.length + snap.status.conflicts.length}{' '}
               个未提交改动。切换可能失败，建议先提交或贮藏。
             </div>
@@ -565,7 +565,7 @@ export function Sidebar() {
       <Modal open={!!mergeTarget} onClose={() => setMergeTarget(null)} width={400}>
         <ModalHeader title="合并分支" onClose={() => setMergeTarget(null)} />
         <div className="space-y-3 p-4">
-          <div className="rounded-[9px] border border-line/70 bg-panel/40 px-3 py-2.5 text-[11.5px] leading-5 text-muted">
+          <div className="rounded-[9px] border border-line/70 bg-panel/40 px-3 py-2.5 text-[12.5px] leading-5 text-muted">
             将 <span className="font-medium text-ink">{mergeTarget?.name}</span> 合并到当前分支{' '}
             <span className="font-medium text-ink">{snap.info.branch}</span>。
           </div>
@@ -625,8 +625,8 @@ function Section({
           ) : (
             <ChevronRight size={10} className="shrink-0 text-faint" />
           )}
-          <span className="text-[10px] font-medium uppercase tracking-[0.1em] text-faint">{title}</span>
-          <span className="text-[9.5px] tabular-nums text-faint/70">{count}</span>
+          <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-faint">{title}</span>
+          <span className="text-[10.5px] tabular-nums text-faint/70">{count}</span>
         </button>
         {action}
       </div>

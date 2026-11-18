@@ -13,8 +13,8 @@ export function CommandLog() {
   return (
     <div className="flex h-[212px] shrink-0 flex-col border-t border-line bg-sidebar">
       <div className="flex h-[30px] shrink-0 items-center gap-2 border-b border-line/60 px-3">
-        <span className="text-[10.5px] font-medium uppercase tracking-[0.08em] text-faint">命令日志</span>
-        <span className="text-[10px] tabular-nums text-faint/70">{logs.length}</span>
+        <span className="text-[11.5px] font-medium uppercase tracking-[0.08em] text-faint">命令日志</span>
+        <span className="text-[11px] tabular-nums text-faint/70">{logs.length}</span>
         <div className="ml-auto flex items-center gap-1">
           <button onClick={() => void openLog()} className="icon-btn h-5 w-5" title="刷新">
             <ChevronRight size={12} />
@@ -34,7 +34,7 @@ export function CommandLog() {
           </button>
         </div>
       </div>
-      <div className="min-h-0 flex-1 overflow-y-auto scroll-thin py-1 font-mono text-[10.5px]">
+      <div className="min-h-0 flex-1 overflow-y-auto scroll-thin py-1 font-mono text-[11.5px]">
         {logs.length === 0 && <div className="px-3 py-2 text-faint">还没有执行过命令</div>}
         {[...logs].reverse().map((l) => (
           <div key={l.id}>
@@ -50,7 +50,7 @@ export function CommandLog() {
               <span className="shrink-0 tabular-nums text-faint/70">{l.durationMs}ms</span>
             </button>
             {expanded === l.id && l.output && (
-              <pre className="mx-3 mb-1 max-h-[120px] overflow-auto whitespace-pre-wrap rounded-[6px] border border-line/60 bg-panel p-2 text-[10px] leading-[15px] text-faint">
+              <pre className="mx-3 mb-1 max-h-[120px] overflow-auto whitespace-pre-wrap rounded-[6px] border border-line/60 bg-panel p-2 text-[11px] leading-[15px] text-faint">
                 {l.output}
               </pre>
             )}

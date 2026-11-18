@@ -36,7 +36,7 @@ export function TabBar() {
           >
             <button
               onClick={() => activateTab(t.path)}
-              className="min-w-0 flex-1 truncate text-left text-[11.5px]"
+              className="min-w-0 flex-1 truncate text-left text-[12.5px]"
               title={t.path}
             >
               {t.name}
@@ -64,7 +64,7 @@ export function TabBar() {
       >
         <Plus size={13} />
       </button>
-      <span className="mb-[6px] ml-auto text-[9.5px] text-faint/70">{tabs.length} 个仓库</span>
+      <span className="mb-[6px] ml-auto text-[10.5px] text-faint/70">{tabs.length} 个仓库</span>
     </div>
   )
 }

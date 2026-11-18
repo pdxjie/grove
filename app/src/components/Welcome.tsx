@@ -20,24 +20,24 @@ export function Welcome() {
           </svg>
         </div>
         <h1 className="text-[20px] font-semibold tracking-[-0.02em] text-ink">打开一个 Git 仓库</h1>
-        <p className="mt-1.5 text-[12px] leading-5 text-muted">
+        <p className="mt-1.5 text-[13px] leading-5 text-muted">
           快、可逆、冲突有解。Grove 只在本地工作，不登录、不上传。
         </p>
 
         <button
           onClick={() => void openRepo()}
-          className="mt-5 flex h-[34px] items-center gap-2 rounded-[9px] bg-accent px-4 text-[12.5px] font-semibold text-[rgb(var(--accent-ink))] transition hover:brightness-110"
+          className="mt-5 flex h-[34px] items-center gap-2 rounded-[9px] bg-accent px-4 text-[13.5px] font-semibold text-[rgb(var(--accent-ink))] transition hover:brightness-110"
         >
           <FolderGit2 size={14} strokeWidth={2.2} />
           选择仓库文件夹
-          <span className="ml-1 rounded-[4px] border border-black/15 bg-black/10 px-1.5 py-[1px] text-[10px] font-medium text-black/55">
+          <span className="ml-1 rounded-[4px] border border-black/15 bg-black/10 px-1.5 py-[1px] text-[11px] font-medium text-black/55">
             ⌘O
           </span>
         </button>
 
         {recents.length > 0 && (
           <div className="mt-7 w-full">
-            <div className="mb-1.5 flex items-center gap-1.5 text-left text-[9.5px] uppercase tracking-[0.12em] text-faint">
+            <div className="mb-1.5 flex items-center gap-1.5 text-left text-[10.5px] uppercase tracking-[0.12em] text-faint">
               <GitBranch size={10} /> 最近打开
             </div>
             <div className="overflow-hidden rounded-[10px] border border-line/80 bg-panel/50">
@@ -50,8 +50,8 @@ export function Welcome() {
                   }`}
                 >
                   <FolderGit2 size={13} className="shrink-0 text-faint" />
-                  <span className="shrink-0 text-[11.5px] text-ink">{r.split('/').filter(Boolean).pop()}</span>
-                  <span className="min-w-0 flex-1 truncate text-[10px] text-faint">
+                  <span className="shrink-0 text-[12.5px] text-ink">{r.split('/').filter(Boolean).pop()}</span>
+                  <span className="min-w-0 flex-1 truncate text-[11px] text-faint">
                     {r.replace(/^\/Users\/[^/]+/, '~')}
                   </span>
                 </button>
@@ -60,7 +60,7 @@ export function Welcome() {
           </div>
         )}
 
-        <div className="mt-6 flex items-center gap-3 text-[10px] text-faint/80">
+        <div className="mt-6 flex items-center gap-3 text-[11px] text-faint/80">
           <span className="flex items-center gap-1">
             <Command size={10} /> K 命令面板
           </span>

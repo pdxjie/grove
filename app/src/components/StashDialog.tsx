@@ -25,7 +25,7 @@ export function StashDialog() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="例如：WIP 调拨导出调试"
-            className="field h-[30px] text-[12px]"
+            className="field h-[30px] text-[13px]"
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
                 void stashPush(message, keepIndex, untracked)

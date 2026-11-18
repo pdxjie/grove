@@ -12,8 +12,8 @@
   --line: 33 37 45;
   --line-strong: 48 54 64;
   --ink: 232 235 240;
-  --muted: 141 149 163;
-  --faint: 93 101 114;
+  --muted: 162 170 182;
+  --faint: 122 130 142;
   --accent: 255 107 87;
   --accent2: 255 158 122;
   --green: 74 222 128;
@@ -36,9 +36,9 @@
   --elevated: 255 255 255;
   --line: 228 223 214;
   --line-strong: 206 200 189;
-  --ink: 30 29 26;
-  --muted: 105 101 94;
-  --faint: 148 142 132;
+  --ink: 22 21 18;
+  --muted: 82 78 72;
+  --faint: 118 112 102;
   --accent: 219 74 56;
   --accent2: 240 120 88;
   --green: 22 163 74;
@@ -66,7 +66,7 @@ body,
 
 html {
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  text-rendering: auto;
 }
 
 body {
@@ -78,7 +78,7 @@ body {
     'PingFang SC', sans-serif;
   font-size: 13px;
   line-height: 1.5;
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
   user-select: none;
   cursor: default;
 }

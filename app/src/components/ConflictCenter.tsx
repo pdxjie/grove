@@ -31,8 +31,8 @@ export function ConflictCenter() {
             <GitMerge size={13} />
           </span>
           <div className="min-w-0">
-            <div className="text-[12.5px] font-medium text-ink">解决冲突</div>
-            <div className="truncate text-[10.5px] text-faint">
+            <div className="text-[13.5px] font-medium text-ink">解决冲突</div>
+            <div className="truncate text-[11.5px] text-faint">
               {file ?? '选择文件'} · 剩余 {conflicts.length} 个冲突文件
             </div>
           </div>
@@ -46,13 +46,13 @@ export function ConflictCenter() {
 
         <div className="flex min-h-0 flex-1">
           <div className="w-[232px] shrink-0 overflow-y-auto border-r border-line/60 bg-sidebar/40 py-1.5 scroll-thin">
-            <div className="px-3 pb-1 text-[9.5px] uppercase tracking-[0.12em] text-faint">冲突文件</div>
+            <div className="px-3 pb-1 text-[10.5px] uppercase tracking-[0.12em] text-faint">冲突文件</div>
             {conflicts.map((f) => (
               <button
                 key={f.path}
                 onClick={() => void openConflict(f.path)}
                 className={cn(
-                  'flex w-full items-center gap-2 px-3 py-[6px] text-left text-[11px] transition',
+                  'flex w-full items-center gap-2 px-3 py-[6px] text-left text-[12px] transition',
                   f.path === file ? 'bg-elevated/80 text-ink' : 'text-muted hover:bg-elevated/40',
                 )}
               >
@@ -60,25 +60,25 @@ export function ConflictCenter() {
                 <span className="truncate">{f.path}</span>
               </button>
             ))}
-            {conflicts.length === 0 && <div className="px-3 py-2 text-[10.5px] text-faint">没有冲突文件</div>}
+            {conflicts.length === 0 && <div className="px-3 py-2 text-[11.5px] text-faint">没有冲突文件</div>}
           </div>
 
           <div className="min-w-0 flex-1 overflow-y-auto p-4 scroll-thin">
             {!doc ? (
-              <div className="flex h-full items-center justify-center gap-2 text-[11.5px] text-faint">
+              <div className="flex h-full items-center justify-center gap-2 text-[12.5px] text-faint">
                 <Spinner size={13} /> 读取冲突内容
               </div>
             ) : blocks.length === 0 ? (
               <div className="flex h-full flex-col items-center justify-center gap-2 text-center">
                 <SplitSquareHorizontal size={18} className="text-faint" />
-                <div className="text-[12px] text-muted">这个文件没有可逐块解决的内容</div>
-                <div className="max-w-[320px] text-[10.5px] leading-[16px] text-faint">
+                <div className="text-[13px] text-muted">这个文件没有可逐块解决的内容</div>
+                <div className="max-w-[320px] text-[11.5px] leading-[16px] text-faint">
                   删除/重命名或二进制冲突无法按块合并，请在下方选择整文件采用某一侧。
                 </div>
               </div>
             ) : (
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-[10.5px] text-faint">
+                <div className="flex items-center gap-2 text-[11.5px] text-faint">
                   <span>
                     已处理 <span className="text-ink">{chosen}</span> / {blocks.length} 块
                   </span>
@@ -95,8 +95,8 @@ export function ConflictCenter() {
                   return (
                     <div key={i} className="overflow-hidden rounded-[10px] border border-line/80 bg-panel/40">
                       <div className="flex items-center gap-2 border-b border-line/50 px-3 py-1.5">
-                        <span className="text-[10px] font-medium text-faint">冲突块 {i + 1}</span>
-                        <span className="ml-auto text-[9.5px] text-faint/70">选择要保留的内容</span>
+                        <span className="text-[11px] font-medium text-faint">冲突块 {i + 1}</span>
+                        <span className="ml-auto text-[10.5px] text-faint/70">选择要保留的内容</span>
                       </div>
                       <div className="grid grid-cols-2">
                         <div
@@ -105,14 +105,14 @@ export function ConflictCenter() {
                             c === 'ours' && 'bg-red/8',
                           )}
                         >
-                          <div className="mb-1 text-[9.5px] font-medium text-red/90">我方 · HEAD</div>
-                          <pre className="max-h-[180px] overflow-auto whitespace-pre-wrap font-mono text-[11px] leading-[16px] text-ink/85 scroll-thin">
+                          <div className="mb-1 text-[10.5px] font-medium text-red/90">我方 · HEAD</div>
+                          <pre className="max-h-[180px] overflow-auto whitespace-pre-wrap font-mono text-[12px] leading-[16px] text-ink/85 scroll-thin">
                             {b.ours || '（空）'}
                           </pre>
                         </div>
                         <div className={cn('p-2.5 transition', c === 'theirs' && 'bg-blue/8')}>
-                          <div className="mb-1 text-[9.5px] font-medium text-blue/90">对方 · incoming</div>
-                          <pre className="max-h-[180px] overflow-auto whitespace-pre-wrap font-mono text-[11px] leading-[16px] text-ink/85 scroll-thin">
+                          <div className="mb-1 text-[10.5px] font-medium text-blue/90">对方 · incoming</div>
+                          <pre className="max-h-[180px] overflow-auto whitespace-pre-wrap font-mono text-[12px] leading-[16px] text-ink/85 scroll-thin">
                             {b.theirs || '（空）'}
                           </pre>
                         </div>
@@ -144,7 +144,7 @@ export function ConflictCenter() {
             整文件采用对方
           </Button>
           <div className="ml-auto flex items-center gap-2">
-            <span className="text-[10px] text-faint">
+            <span className="text-[11px] text-faint">
               {blocks.length > 0 && !allChosen ? '还有未选择的冲突块' : '保存后会 git add 该文件'}
             </span>
             <Button variant="ghost" onClick={close}>
@@ -187,7 +187,7 @@ function Choice({
     <button
       onClick={onClick}
       className={cn(
-        'flex h-[23px] items-center rounded-[6px] border px-2 text-[10.5px] transition',
+        'flex h-[23px] items-center rounded-[6px] border px-2 text-[11.5px] transition',
         active ? activeCls : 'border-line/70 text-faint hover:border-linestrong hover:text-muted',
       )}
     >

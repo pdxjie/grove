@@ -1,4 +1,4 @@
-import { Circle, Eraser, Terminal } from 'lucide-react'
+import { Circle, Terminal } from 'lucide-react'
 import { IS_TAURI } from '../lib/api'
 import { useStore } from '../lib/store'
 import { cn } from '../lib/utils'
@@ -18,7 +18,7 @@ export function StatusBar() {
   return (
     <div
       onMouseDown={beginWindowDrag} onDoubleClick={beginWindowMaximize}
-      className="flex h-[26px] shrink-0 items-center gap-3 border-t border-line/70 bg-sidebar px-3 text-[10.5px] text-faint"
+      className="flex h-[28px] shrink-0 items-center gap-3 border-t border-line/70 bg-sidebar px-3 text-[11px] text-faint"
     >
       <span className="flex min-w-0 items-center gap-1.5">
         <Circle size={5} className={cn('fill-current', snap ? 'text-green' : 'text-faint')} />
@@ -49,18 +49,7 @@ export function StatusBar() {
         >
           <Terminal size={10} />
           命令日志
-          {failures > 0 && <span className="rounded-full bg-red/20 px-1 text-[9px] text-red">{failures}</span>}
-          <span className="flex items-center gap-0.5 opacity-60">
-            <span className="kbd h-[14px] min-w-[14px] text-[9px]">⌘</span>
-            <span className="kbd h-[14px] min-w-[14px] text-[9px]">L</span>
-          </span>
-        </button>
-        <button
-          onClick={() => void openLog()}
-          className="hidden h-[19px] items-center rounded-[5px] px-1.5 hover:bg-elevated hover:text-muted md:flex"
-          title="刷新日志"
-        >
-          <Eraser size={10} />
+          {failures > 0 && <span className="rounded-full bg-red/20 px-1 text-[10px] text-red">{failures}</span>}
         </button>
         <span className="text-faint/50">{IS_TAURI ? '本地优先' : '预览模式'} · 无遥测</span>
       </div>

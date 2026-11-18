@@ -73,8 +73,8 @@ export function ChangesView() {
     <div className="flex min-h-0 flex-1">
       <div className="flex shrink-0 flex-col border-r border-line/70 bg-panel/20" style={{ width: listWidth }}>
         <div onMouseDown={beginWindowDrag} onDoubleClick={beginWindowMaximize} className="flex h-[34px] shrink-0 items-center gap-2 border-b border-line/70 px-3">
-          <span className="text-[11px] font-medium text-ink">变更</span>
-          <span className="text-[10px] tabular-nums text-faint">
+          <span className="text-[12px] font-medium text-ink">变更</span>
+          <span className="text-[11px] tabular-nums text-faint">
             {staged.length + unstaged.length + conflicts.length}
           </span>
           <div className="ml-auto flex items-center gap-0.5">
@@ -129,7 +129,7 @@ export function ChangesView() {
             action={
               staged.length > 0 ? (
                 <button
-                  className="text-[10px] text-faint hover:text-muted"
+                  className="text-[11px] text-faint hover:text-muted"
                   onClick={() => void unstage(staged.map((f) => f.path))}
                 >
                   全部取消
@@ -156,7 +156,7 @@ export function ChangesView() {
             action={
               unstaged.length > 0 ? (
                 <button
-                  className="text-[10px] text-faint hover:text-muted"
+                  className="text-[11px] text-faint hover:text-muted"
                   onClick={() => void stage(unstaged.filter((f) => !isLocal(f.path)).map((f) => f.path))}
                 >
                   全部暂存
@@ -208,10 +208,10 @@ function Section({
     <div className="mb-1">
       <div className="flex h-[24px] items-center gap-1.5 px-3">
         <ChevronDown size={10} className="text-faint" />
-        <span className="text-[10.5px] font-medium uppercase tracking-[0.08em] text-faint">{title}</span>
+        <span className="text-[11.5px] font-medium uppercase tracking-[0.08em] text-faint">{title}</span>
         <span
           className={cn(
-            'rounded-full px-1.5 text-[9.5px] tabular-nums',
+            'rounded-full px-1.5 text-[10.5px] tabular-nums',
             tone === 'green' ? 'bg-green/15 text-green' : tone === 'amber' ? 'bg-amber/15 text-amber' : 'bg-elevated text-faint',
           )}
         >
@@ -225,7 +225,7 @@ function Section({
 }
 
 function Hint({ children }: { children: React.ReactNode }) {
-  return <div className="px-4 py-1.5 text-[10.5px] text-faint">{children}</div>
+  return <div className="px-4 py-1.5 text-[11.5px] text-faint">{children}</div>
 }
 
 function FileRow({
@@ -257,18 +257,18 @@ function FileRow({
     <div
       onClick={onSelect}
       className={cn(
-        'group relative flex h-[26px] cursor-default items-center gap-2 pl-3 pr-1.5 text-[11.5px]',
+        'group relative flex h-[26px] cursor-default items-center gap-2 pl-3 pr-1.5 text-[12.5px]',
         selected ? 'row-selected' : 'hover:bg-elevated/50',
       )}
     >
       {selected && <span className="absolute left-0 top-0 h-full w-[2px] bg-accent" />}
-      <span className={cn('w-[10px] shrink-0 text-center text-[10.5px] font-semibold', statusColor(ch))}>
+      <span className={cn('w-[10px] shrink-0 text-center text-[11.5px] font-semibold', statusColor(ch))}>
         {ch === '?' ? '?' : ch}
       </span>
       <span className="min-w-0 flex-1 truncate">
         <span className="text-faint">{dir}</span>
         <span className={cn('text-ink/90', partial && 'italic')}>{name}</span>
-        {partial && <span className="ml-1 text-[9.5px] text-accent">◐</span>}
+        {partial && <span className="ml-1 text-[10.5px] text-accent">◐</span>}
         {local && (
           <span className="ml-1.5 rounded-[3px] border border-violet/35 bg-violet/10 px-1 text-[8.5px] text-violet/90">
             本地
@@ -355,7 +355,7 @@ function CommitPanel() {
         onChange={(e) => setMessage(e.target.value)}
         placeholder={`提交到 ${snap?.info.branch ?? ''}…`}
         spellCheck={false}
-        className="h-[64px] w-full resize-none rounded-[8px] border border-line bg-panel px-2.5 py-2 text-[12px] leading-[17px] text-ink outline-none transition placeholder:text-faint focus:border-accent/60 focus:ring-[3px] focus:ring-accent/10"
+        className="h-[64px] w-full resize-none rounded-[8px] border border-line bg-panel px-2.5 py-2 text-[13px] leading-[17px] text-ink outline-none transition placeholder:text-faint focus:border-accent/60 focus:ring-[3px] focus:ring-accent/10"
       />
       <div className="mt-1.5 flex items-center gap-1">
         <Toggle active={amend} onClick={() => setAmend(!amend)} label="修改上次" />
@@ -363,29 +363,29 @@ function CommitPanel() {
         <button
           onClick={() => useStore.getState().setStashPanel(true)}
           title="把当前改动贮藏起来"
-          className="ml-1 flex h-[21px] items-center gap-1 rounded-[5px] border border-line/70 px-1.5 text-[10px] text-faint transition hover:border-linestrong hover:text-muted"
+          className="ml-1 flex h-[21px] items-center gap-1 rounded-[5px] border border-line/70 px-1.5 text-[11px] text-faint transition hover:border-linestrong hover:text-muted"
         >
           <Archive size={10} />
           贮藏
         </button>
-        <span className="ml-auto text-[10px] text-faint">
+        <span className="ml-auto text-[11px] text-faint">
           {staged.length > 0 ? `已暂存 ${staged.length} 个文件` : '没有暂存的改动'}
         </span>
       </div>
       <button
         onClick={() => void submit()}
         disabled={disabled}
-        className="mt-2 flex h-[30px] w-full items-center justify-center gap-1.5 rounded-[8px] bg-accent text-[12px] font-semibold text-[rgb(var(--accent-ink))] transition enabled:hover:brightness-110 disabled:bg-elevated disabled:text-faint"
+        className="mt-2 flex h-[30px] w-full items-center justify-center gap-1.5 rounded-[8px] bg-accent text-[13px] font-semibold text-[rgb(var(--accent-ink))] transition enabled:hover:brightness-110 disabled:bg-elevated disabled:text-faint"
       >
         {busy === '提交中' ? <Spinner size={13} /> : <Check size={13} strokeWidth={2.6} />}
         提交
-        <span className="ml-1 flex items-center gap-0.5 text-[10px] font-normal opacity-60">
+        <span className="ml-1 flex items-center gap-0.5 text-[11px] font-normal opacity-60">
           <span>⌘</span>
           <span>↩</span>
         </span>
       </button>
       {staged.length === 0 && (
-        <div className="mt-1.5 flex items-center gap-1 text-[10px] text-faint">
+        <div className="mt-1.5 flex items-center gap-1 text-[11px] text-faint">
           <CircleAlert size={10} />
           先暂存文件，提交只包含暂存区
         </div>
@@ -399,7 +399,7 @@ function Toggle({ active, onClick, label }: { active: boolean; onClick: () => vo
     <button
       onClick={onClick}
       className={cn(
-        'flex h-[21px] items-center gap-1 rounded-[5px] border px-1.5 text-[10px] transition',
+        'flex h-[21px] items-center gap-1 rounded-[5px] border px-1.5 text-[11px] transition',
         active
           ? 'border-accent/40 bg-accent/10 text-accent'
           : 'border-line/70 bg-transparent text-faint hover:border-linestrong hover:text-muted',

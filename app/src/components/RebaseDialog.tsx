@@ -61,7 +61,7 @@ export function RebaseDialog() {
             >
               <div className="flex items-center gap-2">
                 <GripVertical size={12} className="shrink-0 text-faint/60" />
-                <span className="w-[18px] shrink-0 text-center text-[10px] tabular-nums text-faint">{i + 1}</span>
+                <span className="w-[18px] shrink-0 text-center text-[11px] tabular-nums text-faint">{i + 1}</span>
                 <div className="w-[104px] shrink-0">
                   <Select
                     value={a.action}
@@ -75,8 +75,8 @@ export function RebaseDialog() {
                     }))}
                   />
                 </div>
-                <span className="min-w-0 flex-1 truncate text-[11.5px] text-ink/90">{subjectOf(a.sha)}</span>
-                <span className="shrink-0 font-mono text-[9.5px] text-faint/70">{shortSha(a.sha)}</span>
+                <span className="min-w-0 flex-1 truncate text-[12.5px] text-ink/90">{subjectOf(a.sha)}</span>
+                <span className="shrink-0 font-mono text-[10.5px] text-faint/70">{shortSha(a.sha)}</span>
                 <div className="flex shrink-0 items-center gap-0.5">
                   <button
                     onClick={() => move(i, -1)}
@@ -99,14 +99,14 @@ export function RebaseDialog() {
                   value={a.message ?? ''}
                   onChange={(e) => setMessage(i, e.target.value)}
                   placeholder={subjectOf(a.sha)}
-                  className="mt-1.5 h-[26px] w-full rounded-[6px] border border-line bg-panel px-2 text-[11px] text-ink outline-none placeholder:text-faint focus:border-accent/60"
+                  className="mt-1.5 h-[26px] w-full rounded-[6px] border border-line bg-panel px-2 text-[12px] text-ink outline-none placeholder:text-faint focus:border-accent/60"
                 />
               )}
             </div>
           ))}
         </div>
 
-        <div className="flex items-center gap-3 text-[10.5px] text-faint">
+        <div className="flex items-center gap-3 text-[11.5px] text-faint">
           <span>{actions.length} 个提交</span>
           {squashes > 0 && <span className="text-blue">{squashes} 个合并</span>}
           {drops > 0 && <span className="text-red">{drops} 个丢弃</span>}

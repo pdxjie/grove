@@ -145,7 +145,7 @@ export function Palette() {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="搜索分支、操作…"
-            className="h-full flex-1 bg-transparent text-[13px] text-ink outline-none placeholder:text-faint"
+            className="h-full flex-1 bg-transparent text-[14px] text-ink outline-none placeholder:text-faint"
             onKeyDown={(e) => {
               if (e.key === 'ArrowDown') {
                 e.preventDefault()
@@ -165,10 +165,10 @@ export function Palette() {
         </div>
 
         <div className="max-h-[360px] overflow-y-auto scroll-thin p-1.5">
-          {flat.length === 0 && <div className="px-3 py-6 text-center text-[11.5px] text-faint">没有匹配的命令</div>}
+          {flat.length === 0 && <div className="px-3 py-6 text-center text-[12.5px] text-faint">没有匹配的命令</div>}
           {groups.map((g) => (
             <div key={g} className="mb-1">
-              <div className="px-2 py-1 text-[9.5px] uppercase tracking-[0.12em] text-faint/80">{g}</div>
+              <div className="px-2 py-1 text-[10.5px] uppercase tracking-[0.12em] text-faint/80">{g}</div>
               {filtered
                 .filter((c) => c.group === g)
                 .map((c) => {
@@ -184,8 +184,8 @@ export function Palette() {
                       )}
                     >
                       <c.icon size={13} className={isActive ? 'text-accent' : 'text-faint'} strokeWidth={1.9} />
-                      <span className="flex-1 truncate text-[12px]">{c.label}</span>
-                      {c.hint && <span className="text-[10px] text-faint">{c.hint}</span>}
+                      <span className="flex-1 truncate text-[13px]">{c.label}</span>
+                      {c.hint && <span className="text-[11px] text-faint">{c.hint}</span>}
                       {isActive && <Kbd>↵</Kbd>}
                     </button>
                   )

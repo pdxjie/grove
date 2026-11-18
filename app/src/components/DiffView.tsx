@@ -83,17 +83,17 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
     <div className="flex h-full min-h-0 flex-col bg-panel/30">
       <div className="flex h-[34px] shrink-0 items-center gap-2 border-b border-line/70 px-3">
         <FileDiff size={12} className="shrink-0 text-faint" />
-        <span className="min-w-0 flex-1 truncate text-[11.5px] text-ink">
+        <span className="min-w-0 flex-1 truncate text-[12.5px] text-ink">
           {diff?.path ?? selectedCommitFile ?? selectedFile?.path ?? '差异'}
         </span>
         {mode === 'diff' && diff && !diff.binary && diff.hunks.length > 0 && (
-          <span className="flex shrink-0 items-center gap-1.5 text-[10.5px] tabular-nums">
+          <span className="flex shrink-0 items-center gap-1.5 text-[11.5px] tabular-nums">
             <span className="text-green">+{diff.additions}</span>
             <span className="text-red">−{diff.deletions}</span>
           </span>
         )}
         {label && (
-          <span className="shrink-0 rounded-[4px] border border-line bg-panel px-1.5 py-[1px] text-[9.5px] text-faint">
+          <span className="shrink-0 rounded-[4px] border border-line bg-panel px-1.5 py-[1px] text-[10.5px] text-faint">
             {label}
           </span>
         )}
@@ -102,7 +102,7 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
             <button
               onClick={() => setMode('diff')}
               className={cn(
-                'h-[16px] rounded-[4px] px-1.5 text-[9.5px] transition',
+                'h-[16px] rounded-[4px] px-1.5 text-[10.5px] transition',
                 mode === 'diff' ? 'bg-elevated text-ink' : 'text-faint hover:text-muted',
               )}
             >
@@ -111,7 +111,7 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
             <button
               onClick={() => setMode('blame')}
               className={cn(
-                'h-[16px] rounded-[4px] px-1.5 text-[9.5px] transition',
+                'h-[16px] rounded-[4px] px-1.5 text-[10.5px] transition',
                 mode === 'blame' ? 'bg-elevated text-ink' : 'text-faint hover:text-muted',
               )}
             >
@@ -123,7 +123,7 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
 
       <div className="relative min-h-0 flex-1 overflow-auto scroll-thin">
         {loading && (
-          <div className="absolute right-3 top-2 z-10 flex items-center gap-1.5 rounded-[6px] border border-line bg-panel2/90 px-2 py-1 text-[10px] text-faint backdrop-blur">
+          <div className="absolute right-3 top-2 z-10 flex items-center gap-1.5 rounded-[6px] border border-line bg-panel2/90 px-2 py-1 text-[11px] text-faint backdrop-blur">
             <Spinner size={11} /> 读取中
           </div>
         )}
@@ -138,9 +138,9 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
           />
         )}
         {mode === 'blame' && (
-          <div className="min-w-full pb-8 font-mono text-[11.5px] leading-[19px]">
+          <div className="min-w-full pb-8 font-mono text-[12.5px] leading-[19px]">
             {blameLoading && (
-              <div className="flex items-center gap-2 px-3 py-3 text-[10.5px] text-faint">
+              <div className="flex items-center gap-2 px-3 py-3 text-[11.5px] text-faint">
                 <Spinner size={11} /> 计算 blame
               </div>
             )}
@@ -149,14 +149,14 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
             )}
             {blame?.lines.map((l) => (
               <div key={l.line} className="flex w-full min-w-max hover:bg-elevated/30">
-                <span className="w-[44px] shrink-0 select-none border-r border-line/30 px-2 text-right text-[10px] text-faint">
+                <span className="w-[44px] shrink-0 select-none border-r border-line/30 px-2 text-right text-[11px] text-faint">
                   {l.line}
                 </span>
-                <span className="w-[62px] shrink-0 truncate px-2 text-[9.5px] text-blue/80">
+                <span className="w-[62px] shrink-0 truncate px-2 text-[10.5px] text-blue/80">
                   {l.sha.startsWith('0000000') ? '未提交' : l.sha.slice(0, 7)}
                 </span>
-                <span className="w-[74px] shrink-0 truncate px-1 text-[10px] text-amber/90">{l.author}</span>
-                <span className="w-[64px] shrink-0 px-1 text-[9.5px] text-faint">{timeAgo(l.time)}</span>
+                <span className="w-[74px] shrink-0 truncate px-1 text-[11px] text-amber/90">{l.author}</span>
+                <span className="w-[64px] shrink-0 px-1 text-[10.5px] text-faint">{timeAgo(l.time)}</span>
                 <span className="whitespace-pre pr-6 text-ink/85">{l.content || ' '}</span>
               </div>
             ))}
@@ -167,17 +167,17 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
           <EmptyState icon={FileDiff} title="二进制文件" hint="Grove 不渲染二进制内容，可在 Finder 中打开查看" />
         )}
         {mode === 'diff' && diff && !diff.binary && diff.hunks.length > 0 && (
-          <div className={cn('min-w-full pb-8 font-mono text-[12px] leading-[19px]', compact && 'text-[11.5px]')}>
+          <div className={cn('min-w-full pb-8 font-mono text-[12.5px] leading-[20px]', compact && 'text-[12px]')}>
             {diff.hunks.map((h, hi) => (
               <div key={hi}>
-                <div className="diff-hunk group/hunk sticky top-0 z-[1] flex h-[22px] items-center gap-2 border-y border-line/40 px-3 text-[10.5px] text-blue/90">
+                <div className="diff-hunk group/hunk sticky top-0 z-[1] flex h-[24px] items-center gap-2 border-y border-line/40 px-3 text-[11px] text-blue/90">
                   <span className="min-w-0 flex-1 truncate">{h.header}</span>
                   {viewName === 'changes' &&
                     (selectedFile?.scope === 'worktree' || selectedFile?.scope === 'index') && (
                       <button
                         onClick={() => void stageHunk(hi)}
                         title={selectedFile.scope === 'index' ? '把这个 hunk 从暂存区取回' : '只把这个 hunk 放进暂存区'}
-                        className="shrink-0 rounded-[4px] border border-blue/30 bg-blue/10 px-1.5 py-[1px] text-[9.5px] text-blue opacity-75 transition hover:bg-blue/20 hover:opacity-100"
+                        className="shrink-0 rounded-[4px] border border-blue/30 bg-blue/10 px-1.5 py-[1px] text-[10.5px] text-blue opacity-75 transition hover:bg-blue/20 hover:opacity-100"
                       >
                         {selectedFile.scope === 'index' ? '取消暂存此 hunk' : '暂存此 hunk'}
                       </button>
@@ -216,10 +216,10 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
                         </span>
                       ) : null}
                     </span>
-                    <span className="diff-num w-[44px] shrink-0 select-none border-r border-line/35 px-2 text-right text-[10.5px]">
+                    <span className="diff-num w-[44px] shrink-0 select-none border-r border-line/35 px-2 text-right text-[11.5px]">
                       {line.oldNo ?? ''}
                     </span>
-                    <span className="diff-num w-[44px] shrink-0 select-none border-r border-line/35 px-2 text-right text-[10.5px]">
+                    <span className="diff-num w-[44px] shrink-0 select-none border-r border-line/35 px-2 text-right text-[11.5px]">
                       {line.newNo ?? ''}
                     </span>
                     <span
@@ -238,7 +238,7 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
               </div>
             ))}
             {diff.truncated && (
-              <div className="px-3 py-2 text-[10.5px] text-amber">差异过大，已截断显示</div>
+              <div className="px-3 py-2 text-[11.5px] text-amber">差异过大，已截断显示</div>
             )}
           </div>
         )}
@@ -246,17 +246,17 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
 
       {selLines.size > 0 && canPick && (
         <div className="flex h-[38px] shrink-0 items-center gap-2 border-t border-line/70 bg-panel2 px-3">
-          <span className="text-[11px] text-muted">
+          <span className="text-[12px] text-muted">
             已选 <span className="font-semibold text-ink">{selLines.size}</span> 行
           </span>
-          <span className="text-[10px] text-faint">只影响这一处改动</span>
+          <span className="text-[11px] text-faint">只影响这一处改动</span>
           <div className="ml-auto flex items-center gap-2">
             <button
               onClick={() => {
                 setSelHunk(null)
                 setSelLines(new Set())
               }}
-              className="text-[10.5px] text-faint hover:text-muted"
+              className="text-[11.5px] text-faint hover:text-muted"
             >
               清除
             </button>
@@ -266,7 +266,7 @@ export function DiffView({ compact = false }: { compact?: boolean }) {
                 setSelHunk(null)
                 setSelLines(new Set())
               }}
-              className="flex h-[24px] items-center rounded-[6px] bg-accent px-2.5 text-[10.5px] font-semibold text-[rgb(var(--accent-ink))] transition hover:brightness-110"
+              className="flex h-[24px] items-center rounded-[6px] bg-accent px-2.5 text-[11.5px] font-semibold text-[rgb(var(--accent-ink))] transition hover:brightness-110"
             >
               {selectedFile?.scope === 'index' ? '取消暂存选中行' : '暂存选中行'}
             </button>

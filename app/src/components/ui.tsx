@@ -36,7 +36,7 @@ export function Button({
       disabled={props.disabled || loading}
       className={cn(
         'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-[7px] font-medium transition disabled:pointer-events-none disabled:opacity-40',
-        size === 'sm' ? 'h-[24px] px-2 text-[10.5px]' : 'h-[27px] px-2.5 text-[11.5px]',
+        size === 'sm' ? 'h-[24px] px-2 text-[11.5px]' : 'h-[27px] px-2.5 text-[12.5px]',
         variants[variant],
         className,
       )}
@@ -98,7 +98,7 @@ export function Segmented<T extends string>({
           key={it.value}
           onClick={() => onChange(it.value)}
           className={cn(
-            'h-[21px] rounded-[6px] px-2.5 text-[11.5px] transition',
+            'h-[21px] rounded-[6px] px-2.5 text-[12.5px] transition',
             value === it.value
               ? 'bg-elevated font-medium text-ink shadow-[0_1px_0_rgba(255,255,255,.04)_inset]'
               : 'text-faint hover:text-muted',
@@ -158,8 +158,8 @@ export function ModalHeader({
   return (
     <div className="flex items-start justify-between border-b border-line/70 px-4 py-3">
       <div>
-        <div className="text-[13px] font-semibold text-ink">{title}</div>
-        {subtitle && <div className="mt-0.5 text-[11px] text-faint">{subtitle}</div>}
+        <div className="text-[14px] font-semibold text-ink">{title}</div>
+        {subtitle && <div className="mt-0.5 text-[12px] text-faint">{subtitle}</div>}
       </div>
       {onClose && (
         <button onClick={onClose} className="icon-btn -mr-1 -mt-0.5">
@@ -182,8 +182,8 @@ export function Field({
   return (
     <label className="block">
       <div className="mb-1.5 flex items-center justify-between">
-        <span className="text-[11px] font-medium text-muted">{label}</span>
-        {hint && <span className="text-[10.5px] text-faint">{hint}</span>}
+        <span className="text-[12px] font-medium text-muted">{label}</span>
+        {hint && <span className="text-[11.5px] text-faint">{hint}</span>}
       </div>
       {children}
     </label>
@@ -219,8 +219,8 @@ export function Checkbox({
         )}
       </span>
       <span className="min-w-0">
-        <span className="block text-[12px] text-ink">{label}</span>
-        {hint && <span className="mt-0.5 block text-[10.5px] leading-[15px] text-faint">{hint}</span>}
+        <span className="block text-[13px] text-ink">{label}</span>
+        {hint && <span className="mt-0.5 block text-[11.5px] leading-[15px] text-faint">{hint}</span>}
       </span>
     </button>
   )
@@ -242,8 +242,8 @@ export function EmptyState({
       <div className="mb-1 flex h-9 w-9 items-center justify-center rounded-[10px] border border-line bg-panel text-faint">
         <Icon size={16} strokeWidth={1.6} />
       </div>
-      <div className="text-[12.5px] text-muted">{title}</div>
-      {hint && <div className="max-w-[260px] text-[11px] leading-[16px] text-faint">{hint}</div>}
+      <div className="text-[13.5px] text-muted">{title}</div>
+      {hint && <div className="max-w-[260px] text-[12px] leading-[16px] text-faint">{hint}</div>}
       {action}
     </div>
   )
@@ -305,13 +305,13 @@ export function Menu({
               onClose()
             }}
             className={cn(
-              'flex h-[27px] w-full items-center gap-2 rounded-[6px] px-2 text-left text-[11.5px] transition disabled:opacity-35',
+              'flex h-[27px] w-full items-center gap-2 rounded-[6px] px-2 text-left text-[12.5px] transition disabled:opacity-35',
               it.danger ? 'text-red hover:bg-red/10' : 'text-ink hover:bg-elevated',
             )}
           >
             {it.icon && <it.icon size={13} strokeWidth={1.8} className={it.danger ? 'text-red' : 'text-muted'} />}
             <span className="flex-1 truncate">{it.label}</span>
-            {it.hint && <span className="text-[10px] text-faint">{it.hint}</span>}
+            {it.hint && <span className="text-[11px] text-faint">{it.hint}</span>}
           </button>
         ),
       )}
